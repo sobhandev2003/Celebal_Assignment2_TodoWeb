@@ -6,6 +6,9 @@ Welcome to the ToDo Web App! This application helps you manage your tasks effici
 
 1. **Add a Task with a Due Date**
    - Create new tasks by specifying a task name and a due date.
+   - **Snapshot**
+     
+   ![reactTodoapp1](https://github.com/sobhandev2003/Celebal_Assignment2_TodoWeb/assets/129223188/8c599895-68f2-480e-ad8e-2125b319dfe0)
 
 2. **Filter Tasks**
    - **All**: View all tasks.
@@ -14,10 +17,16 @@ Welcome to the ToDo Web App! This application helps you manage your tasks effici
    - **Today's Tasks**: View tasks that are due today.
 
 3. **Sort by Due Date**
-   - Sort tasks in ascending  order based on their due dates.
+   -  Sort tasks in ascending order based on their due dates and adding time.
+     
 
 4. **Search Functionality**
-   - Search for tasks by task name to quickly find specific tasks.
+   - You can search tasks by task name to quickly find specific tasks.
+     
+***Snapshot**
+   
+
+   ![reactTodoapp2](https://github.com/sobhandev2003/Celebal_Assignment2_TodoWeb/assets/129223188/24b84008-4535-4115-a0fa-2ce1189f5ae0)
 
 ## Technology Stack
 
