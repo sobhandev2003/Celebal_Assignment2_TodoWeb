@@ -326,3 +326,10 @@
     height: 2px;
     background-color: red;
 }
+
+/* ============================ Empty Task style ==================================== */
+.empty-heading{
+    font-size: 3rem;
+    letter-spacing: 3px;
+    color: rgb(6, 48, 126);
+}

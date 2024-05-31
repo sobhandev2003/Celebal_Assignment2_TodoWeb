@@ -1,5 +1,6 @@
 import '../css/AddTodo.css'
 import React, { useEffect, useState } from 'react'
+import { toast } from 'react-toastify';
 import { v4 as uuidv4 } from 'uuid';
 function AddTodo({ tasks, setTasks }) {
     const [minDateTime, setMinDateTime] = useState('');
@@ -18,13 +19,13 @@ function AddTodo({ tasks, setTasks }) {
     })
     const produceError = () => {
         setErrorMsg({
-            taskNameError: newTask.taskName.trim() == "" ? "Task name is required" : "",
-            dueDateError: newTask.dueDate.trim() == "" ? "Due date is required" : ""
+            taskNameError: newTask.taskName.trim() === "" ? "Task name is required" : "",
+            dueDateError: newTask.dueDate.trim() === "" ? "Due date is required" : ""
         })
 
     }
     const addNewTask = () => {
-        if (newTask.taskName.trim() == "" || newTask.dueDate.trim() == "") {
+        if (newTask.taskName.trim() === "" || newTask.dueDate.trim() === "") {
             setIsTouched({
                 taskName: true,
                 dueDate: true
@@ -38,12 +39,18 @@ function AddTodo({ tasks, setTasks }) {
                 taskName: newTask.taskName,
                 dueDate: newTask.dueDate,
                 isDone: false,
-                isTimeOver: false
+                isTimeOver: false,
+                createdAt:new Date()
             }]);
+            toast.success("🚀 Task successfully added")
+            setNewTask({
+                taskName: "",
+                dueDate: "",
+            })
         }
     }
     const handelBlur = (e) => {
-        const { name, value } = e.target;
+        const { name} = e.target;
         setIsTouched({
             ...isTouched,
             [name]: true
@@ -60,6 +67,7 @@ function AddTodo({ tasks, setTasks }) {
 
     useEffect(() => {
         produceError()
+        // eslint-disable-next-line
     }, [newTask])
 
 
@@ -68,10 +76,9 @@ function AddTodo({ tasks, setTasks }) {
         const year = now.getFullYear();
         const month = (now.getMonth() + 1).toString().padStart(2, '0');
         const day = now.getDate().toString().padStart(2, '0');
-        const hours = now.getHours().toString().padStart(2, '0');
-        const minutes = now.getMinutes().toString().padStart(2, '0');
         const formattedDateTime = `${year}-${month}-${day}`;
         setMinDateTime(formattedDateTime);
+        // eslint-disable-next-line
     }, []);
 
 

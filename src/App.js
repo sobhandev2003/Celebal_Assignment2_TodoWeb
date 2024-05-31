@@ -10,6 +10,7 @@ function App() {
   });
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
+    
   }, [tasks])
 
   useEffect(() => {
@@ -23,6 +24,7 @@ function App() {
       }
       return task;
     }))
+    // eslint-disable-next-line
   }, [])
   return (
     <div className='App'>
