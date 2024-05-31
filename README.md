@@ -17,7 +17,7 @@ Welcome to the ToDo Web App! This application helps you manage your tasks effici
    - **Today's Tasks**: View tasks that are due today.
 
 3. **Sort by Due Date**
-   -  Sort tasks in ascending order based on their due dates and adding time.
+   -  Sort tasks in ascending order based on their due dates or adding time.
      
 
 4. **Search Functionality**
