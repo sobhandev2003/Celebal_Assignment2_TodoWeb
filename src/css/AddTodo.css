@@ -1,9 +1,9 @@
 .add-todo-container {
-    /* margin-top: 3%; */
     margin-left: 1rem;
     display: flex;
     flex-wrap: wrap;
-    gap: 1.5rem;
+    row-gap: 2.5rem;
+    column-gap: 2.5rem;
 }
 
 .add-todo-container label {
