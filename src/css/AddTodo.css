@@ -6,30 +6,12 @@
     column-gap: 2.5rem;
 }
 
-.add-todo-container label {
+.add-todo-container .input-container {
     position: relative;
-}
-
-.add-todo-container label .placeholder {
-    color: rgb(2, 2, 43);
-    position: absolute;
-    bottom: 100%;
-
-}
-
-.add-todo-container label input {
-    padding: 3px 5px;
-    font-size: 1.3rem;
-    border: 1px solid gray;
-    border-radius: 5px;
-    outline: none;
-    outline-width: 1.5px;
-    caret-color: #854dff;
-    color: #854dff;
-
-}
-.add-todo-container label input:focus{
-    border: 2px solid rgb(124, 138, 255);
+    /* border: 1px solid red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .add-todo-container .add-btn {

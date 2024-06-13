@@ -20,43 +20,41 @@ function DisplayTask({ tasks, setTasks }) {
     }))
     toast.success("👍 Congratulation you complete a task")
   }
-
+//NOTE - Delete
   const deleteATask = (taskId) => {
     setTasks(tasks.filter((task) => task.id !== taskId))
     toast.success("🚫 Task successfully deleted")
   }
-
+//NOTE - clear all filter
   const clearAllFilter = () => {
     const filterTask = tasks;
     const filterSortedTask = sorting_criteria ? sortTaskArray(sorting_criteria, filterTask) : filterTask;
     setDisplayTask(filterSortedTask);
     setFilterState("all")
   }
-
+//NOTE - Pending task
   const pendingTaskFilter = () => {
     const filterTask = tasks.filter((task) => task.isDone === false);
     const filterSortedTask = sorting_criteria ? sortTaskArray(sorting_criteria, filterTask) : filterTask;
     setDisplayTask(filterSortedTask);
     setFilterState("pending")
   }
-
+//NOTE - copleted task
   const completedTaskFilter = () => {
     const filterTask = tasks.filter((task) => task.isDone === true);
     const filterSortedTask = sorting_criteria ? sortTaskArray(sorting_criteria, filterTask) : filterTask;
     setDisplayTask(filterSortedTask);
     setFilterState("completed")
   }
-
+//NOTE - today task
   const todayTaskFilter = () => {
     const localDate = new Date().toLocaleDateString();
-    const [month, day, year] = localDate.split('/');
-    const todayDate = `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`;
-    const filterTask = tasks.filter((task) => task.dueDate.split("T")[0] === todayDate);
+    const filterTask = tasks.filter((task) => (new Date(task.dueDate).toLocaleDateString()) === localDate);
     const filterSortedTask = sorting_criteria ? sortTaskArray(sorting_criteria, filterTask) : filterTask;
     setDisplayTask(filterSortedTask);
     setFilterState("today")
   }
-
+//NOTE - sort task
   const sortTaskArray = (sortBy = "dueDate", array = displayTask) => {
     let sortedArray = []
     if (sortBy === "dueDate") {
